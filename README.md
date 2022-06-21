@@ -14,6 +14,7 @@ Aplicação de assinatura de conteúdo, utilizando as segintes tecnologias:
 - Faunadb
 - SASS
 - Stripe
+- Prismic CMS
 
 ## Getting Started
 
