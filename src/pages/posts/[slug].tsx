@@ -5,6 +5,8 @@ import { RichText } from "prismic-dom";
 import React from "react";
 import { getPrismicClient } from "../../services/prismic";
 
+import styles from "./post.module.scss";
+
 interface PostProps {
   post: {
     slug: string;
@@ -15,30 +17,32 @@ interface PostProps {
 }
 
 export default function Post({ post }: PostProps) {
-  console.log(post);
   return (
     <>
       <Head>
-        <title>{post?.title} | Ignews</title>
+        <title>{post.title} | Ignews</title>
       </Head>
-      <main>
-        <article>
-          <h1>{post?.title}</h1>
-          <time>{post?.updatedAt}</time>
+      <main className={styles.container}>
+        <article className={styles.post}>
+          <h1>{post.title}</h1>
+          <time>{post.updatedAt}</time>
+
+          <div
+            className={styles.postContent}
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </article>
-        <div dangerouslySetInnerHTML={{ __html: post?.content }} />
       </main>
     </>
   );
 }
 
-export const getServeSideProps: GetServerSideProps = async ({
+export const getServerSideProps: GetServerSideProps = async ({
   req,
   params,
 }) => {
   const session = await getSession({ req });
   const { slug } = params;
-
   const prismic = getPrismicClient(req);
 
   const response = await prismic.getByUID("publication", slug.toString());

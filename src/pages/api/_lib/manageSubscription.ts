@@ -24,9 +24,14 @@ export async function saveSubscription(
   };
 
   if (createAction) {
-    await fauna.query(
-      q.Create(q.Collection("subscriptions"), { data: subscriptionData })
-    );
+    try {
+      await fauna.query(
+        q.Create(q.Collection("subscriptions"), { data: subscriptionData })
+      );
+    } catch (error) {
+      console.log("create subscription");
+      console.error(error);
+    }
   } else {
     await fauna.query(
       q.Replace(
