@@ -1,9 +1,10 @@
 import { GetStaticProps } from "next";
-import Prismic from "@prismicio/client";
+import Prismic, { createClient } from "@prismicio/client";
 import Head from "next/head";
 import { getPrismicClient } from "../../services/prismic";
 import styles from "./styles.module.scss";
 import { RichText } from "prismic-dom";
+import Link from "next/link";
 
 type Post = {
   slug: string;
@@ -17,7 +18,6 @@ interface PostsPros {
 }
 
 export default function Posts({ posts }: PostsPros) {
-  console.log(posts);
   return (
     <>
       <Head>
@@ -27,11 +27,13 @@ export default function Posts({ posts }: PostsPros) {
       <main className={styles.container}>
         <div className={styles.postList}>
           {posts.map((post) => (
-            <a key={post.slug} href="#">
-              <time>{post.updatedAt}</time>
-              <strong>{post.title}</strong>
-              <p>{post.excerpt}</p>
-            </a>
+            <Link key={post.slug} href={`/posts/${post.slug}`}>
+              <a>
+                <time>{post.updatedAt}</time>
+                <strong>{post.title}</strong>
+                <p>{post.excerpt}</p>
+              </a>
+            </Link>
           ))}
         </div>
       </main>
@@ -39,13 +41,9 @@ export default function Posts({ posts }: PostsPros) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient;
-
-  const response = await prismic.getAllByType("publication", {
-    fetch: ["Title", "Content"],
-    pageSize: 100,
-  });
+export const getStaticProps: GetStaticProps = async ({ previewData }) => {
+  const client = getPrismicClient();
+  const response = await client.getAllByType("publication");
 
   const posts = response.map((post) => {
     return {
@@ -64,8 +62,6 @@ export const getStaticProps: GetStaticProps = async () => {
       ),
     };
   });
-
-  console.log(JSON.stringify(response, null, 2));
 
   return {
     props: { posts },
