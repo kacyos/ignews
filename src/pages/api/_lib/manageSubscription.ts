@@ -29,7 +29,6 @@ export async function saveSubscription(
         q.Create(q.Collection("subscriptions"), { data: subscriptionData })
       );
     } catch (error) {
-      console.log("create subscription");
       console.error(error);
     }
   } else {
