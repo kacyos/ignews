@@ -46,7 +46,7 @@
 
 ## :dart: Sobre ##
 
-Aplicação de assinatura de conteúdo em texto.
+Aplicação de assinatura de conteúdo em texto, desenvolvida durante o curso Ignite da <a href="https://www.rocketseat.com.br/">Rockeseat 🚀</a>.
 
 ## :sparkles: Funcionalidades ##
 
