@@ -1,64 +1,110 @@
-# Ignews 🚀
+<div align="center" id="top"> 
+  <img src="./cover.png" alt="Ignews" />
 
-<center >
- <img height="350px" src="./cover.png">
-</center>
+  &#xa0;
 
-## Sobre o projeto:
+  <!-- <a href="https://ignews.netlify.com">Demo</a> -->
+</div>
 
-Aplicação de assinatura de conteúdo, utilizando as segintes tecnologias:
+<h1 align="center">Ignews</h1>
 
-- NextJS
-- Faunadb
-- SASS
-- Stripe
-- Prismic CMS
+<p align="center">
+  <img alt="Principal linguagem do projeto" src="https://img.shields.io/github/languages/top/kacyos/ignews?color=56BEB8">
 
-## Getting Started
+  <img alt="Quantidade de linguagens utilizadas" src="https://img.shields.io/github/languages/count/kacyos/ignews?color=56BEB8">
 
-### Rode a aplicação:
+  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/kacyos/ignews?color=56BEB8">
 
-Baixar as dependências:
+  <img alt="Licença" src="https://img.shields.io/github/license/kacyos/ignews?color=56BEB8">
+
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/kacyos/ignews?color=56BEB8" /> -->
+
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/kacyos/ignews?color=56BEB8" /> -->
+
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/kacyos/ignews?color=56BEB8" /> -->
+</p>
+
+<!-- Status -->
+
+<!-- <h4 align="center"> 
+	🚧  Ignews 🚀 Em construção...  🚧
+</h4> 
+
+<hr> -->
+
+<p align="center">
+  <a href="#dart-sobre">Sobre</a> &#xa0; | &#xa0; 
+  <a href="#sparkles-funcionalidades">Funcionalidades</a> &#xa0; | &#xa0;
+  <a href="#rocket-tecnologias">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-pré-requisitos">Pré requisitos</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-começando">Começando</a> &#xa0; | &#xa0;
+  <a href="#memo-licença">Licença</a> &#xa0; | &#xa0;
+  <a href="https://github.com/kacyos" target="_blank">Autor</a>
+</p>
+
+<br>
+
+## :dart: Sobre ##
+
+Aplicação de assinatura de conteúdo em texto.
+
+## :sparkles: Funcionalidades ##
+
+:heavy_check_mark: Login OAuth com Git Hub;\
+:heavy_check_mark: Visualização limitada de um post para não assinantes;\
+:heavy_check_mark: Assinatura de conteúdo com stripe;
+
+## :rocket: Tecnologias ##
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Next.JS](https://nextjs.org/)
+- [SCSS](https://sass-lang.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Fauna](https://fauna.com/)
+- [Prismic](https://prismic.io/)
+- [Stripe](https://stripe.com/br)
+
+## :white_check_mark: Pré requisitos ##
+
+Antes de começar :checkered_flag:, você precisa ter o [Git](https://git-scm.com) e o [Node](https://nodejs.org/en/) instalados em sua maquina.
+
+## :checkered_flag: Começando ##
 
 ```bash
-npm install
-# ou
-yarn
-```
+# Clone este repositório
+$ git clone https://github.com/kacyos/ignews
 
-Execute a aplicação
+# Entre na pasta
+$ cd ignews
 
-```bash
-npm run dev
+# Instale as dependências
+$ yarn
+
+# Execute o comando de configuração do prismic
+$ npx @slicemachine/init
+
+# Execute o prismic
+$ npm run slicemachine
 # or
-yarn dev
+$ yarn slicemachine
+
+#Siga a documentação para configurar a CLI stripe
+ https://stripe.com/docs/stripe-cli
+
+# Para iniciar o projeto
+$ yarn start
+
+# O app vai inicializar em <http://localhost:3000>
 ```
 
-Execute o comando de configuração do prismic
+## :memo: Licença ##
 
-```bash
-npx @slicemachine/init
-```
+Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
-Execute o prismic
 
-```bash
-npm run slicemachine
-# or
-yarn slicemachine
-```
+Feito com :heart: por <a href="https://github.com/kacyos" target="_blank">Cacio de Castro</a>
 
-Siga a documentação para configurar a CLI stripe
+&#xa0;
 
-<a href="https://stripe.com/docs/stripe-cli
-">Documentação stripe</ah>
-
-Execute o stripe
-
-```bash
-npm run stripe
-# or
-yarn stripe
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a href="#top">Voltar para o topo</a>
