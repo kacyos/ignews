@@ -34,12 +34,10 @@ npm run dev
 yarn dev
 ```
 
-Execute o prismic
+Execute o comando de configuração do prismic
 
 ```bash
-npm run slicemachine
-# or
-yarn slicemachine
+npx @slicemachine/init
 ```
 
 Execute o prismic
@@ -49,6 +47,11 @@ npm run slicemachine
 # or
 yarn slicemachine
 ```
+
+Siga a documentação para configurar a CLI stripe
+
+<a href="https://stripe.com/docs/stripe-cli
+">Documentação stripe</ah>
 
 Execute o stripe
 
